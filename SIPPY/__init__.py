@@ -107,7 +107,7 @@ def system_identification(y,u,id_method,centering='None',IC='None',\
             else:
                 sys.exit("Error! ARMAX_orders must be a list containing four lists or four integers")
 #                identified_system='None'
-        elif id_method=='N4SID' or id_method=='MOESP' or id_method=='CVA':
+        elif id_method=='N4SID' or id_method=='MOESP' or id_method=='CVA' or id_method=='PO' or id_method=='instr':
             from . import OLSims_methods
             A,B,C,D,Vn,Q,R,S,K=OLSims_methods.OLSims(y,u,SS_f,id_method,SS_threshold,SS_max_order,SS_fixed_order,SS_D_required,SS_A_stability)
             identified_system=OLSims_methods.SS_model(A,B,C,D,K,Q,R,S,tsample,Vn)
