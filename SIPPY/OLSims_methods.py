@@ -34,7 +34,7 @@ def SVD_weighted(y,u,f,l,weights='N4SID'):
         W2 = np.linalg.inv(sc.linalg.sqrtm(np.dot(np.dot(Zp,PIort_Uf),np.dot(Zp,PIort_Uf).T)).real)
     elif weights=='instr':
         W1 = np.linalg.inv(sc.linalg.sqrtm(np.dot(np.dot(Yf,PIort_Uf),np.dot(Yf,PIort_Uf).T)).real)
-        w2 = np.linalg.inv(sc.linalg.sqrtm(np.dot(Zp,Zp.T)).real)
+        W2 = np.linalg.inv(sc.linalg.sqrtm(np.dot(Zp,Zp.T)).real)
     U_n,S_n,V_n=np.linalg.svd(np.dot(np.dot(W1,O_i),W2))
     return U_n,S_n,V_n,W1,O_i
 
